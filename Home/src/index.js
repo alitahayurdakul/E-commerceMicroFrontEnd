@@ -1,0 +1,1 @@
+import('./bootstrap');//asenkron yükleme yapılsın yani App'lerin tamamen hazır olduğuna emin olmak için

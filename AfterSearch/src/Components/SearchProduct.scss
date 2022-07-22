@@ -1,0 +1,107 @@
+$main-width: 70%;
+
+.search-products {
+  max-width: 1100px;
+  margin-inline: auto;
+  margin-block: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 50px;
+
+  .card {
+    padding: 20px;
+    overflow: hidden;
+    display: grid;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: 1s;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    grid-template-rows: 200px 1fr 0.5fr;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+
+    .card-go-detail {
+      text-decoration: none;
+      color: black;
+      transition: 1s;
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(125, 22, 229);
+        text-decoration: underline;
+
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      img {
+        margin-block: 10px;
+        transition: 0.5s;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+    }
+
+    .card-content {
+      overflow: hidden;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+    .card-ratings {
+      display: flex;
+      align-items: center;
+      justify-self: center;
+
+      span:nth-child(2) {
+        font-size: 13px;
+        margin-left: 3px;
+      }
+
+      span:nth-child(3) {
+        font-size: 10px;
+        margin-left: 3px;
+      }
+    }
+
+    .card-footer {
+      color: #ec7424b0;
+      transition: 1s;
+      text-align: center;
+
+      &:hover {
+        color: #ec7424;
+      }
+
+      i {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.search-not-products{
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 20px 30px;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
