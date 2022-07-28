@@ -5,6 +5,7 @@
   grid-template-columns: 2fr 1fr;
   gap: 30px 50px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding-inline: 40px;
 
   .order-list {
     padding: 20px 30px;
@@ -103,6 +104,37 @@
 
       span:nth-child(2) {
         color: #0080ffb6;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px){
+  .bag-part {
+    grid-template-columns: 1fr;
+    margin-block: 30px;
+  }  
+}
+
+@media (max-width: 650px){
+  .bag-part {  
+    .order-list {
+      font-size: 15px;
+      h2{
+        text-align: center;
+      }
+      .order-list-card {
+        grid-template-columns: 1fr;  
+        text-align: center;
+       
+        img {
+          width: 90%;
+        }
+  
+        .order-list-card-middle {
+          font-size: 18px;
+        }
+  
       }
     }
   }

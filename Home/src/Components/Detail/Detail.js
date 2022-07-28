@@ -9,6 +9,7 @@ function Detail({addOrderList}) {
     const [status, setStatus] = useState(true);
 
     useEffect(() => {
+       
         const getProductDetail = async () => {
             await axios.get(`https://fakestoreapi.com/products/${id}`)
                 .then(response => {
