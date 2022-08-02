@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ReactStars from 'react-stars';
+import { Helmet } from 'react-helmet';
 
-function Detail({addOrderList}) {
+function Detail({ addOrderList }) {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
     const [status, setStatus] = useState(true);
 
     useEffect(() => {
-       
+
         const getProductDetail = async () => {
             await axios.get(`https://fakestoreapi.com/products/${id}`)
                 .then(response => {
@@ -27,14 +28,18 @@ function Detail({addOrderList}) {
     }, []);
 
     const onAddOrder = () => {
-       addOrderList(product)
+        addOrderList(product)
     }
 
     return (
         <>
+
             {
                 !status ?
                     product.length !== 0 ? <div className='product-detail'>
+                        <Helmet>
+                            <title>{product.title} | E-Commerce</title>
+                        </Helmet>
                         <div className='product-detail-img-part'>
                             <img src={product.image} alt={product.image} />
                         </div>
@@ -63,6 +68,9 @@ function Detail({addOrderList}) {
                             </p>
                         </div>
                     </div> : <div>
+                        <Helmet>
+                            <title>Ürün bulunamadı | E-Commerce</title>
+                        </Helmet>
                         <p>
                             Böyle bir ürün bulunamadı...
                         </p>

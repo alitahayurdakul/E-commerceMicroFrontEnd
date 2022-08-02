@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Bag.scss';
 import OrderPrice from './OrderPrice/OrderPrice';
+import { Helmet } from "react-helmet";
 
 class Bag extends Component {
 
@@ -62,6 +63,9 @@ class Bag extends Component {
     return (
 
       <div className='bag-part'>
+        <Helmet>
+          <title>Sepetim | E-Commerce</title>
+        </Helmet>
         {
           this.state.orderList.length !== 0 ? <>
             <div className='order-list'>

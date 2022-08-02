@@ -3,6 +3,7 @@ import Card from 'card/Card';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './SearchProduct.scss';
+import { Helmet } from 'react-helmet';
 
 function SearchProduct({ addOrderList }) {
     const [filterProducts, setFilterProducts] = useState([]);
@@ -37,14 +38,22 @@ function SearchProduct({ addOrderList }) {
             {
                 !status ? (
                     <div className='search-products'>
+                        <Helmet>
+                            <title>{id.slice(2)} Ürünleri | E-Commerce</title>
+                        </Helmet>
                         {filterProducts.map(fProduct => (
                             <React.Fragment key={fProduct.id}>
+
                                 <Card product={fProduct} addOrderList={addOrderList} />
                             </React.Fragment>
                         ))}
-                    </div>) : <div className='search-not-products'>
-                    {status}
-                </div>
+                    </div>) :
+                    <div className='search-not-products'>
+                        <Helmet>
+                            <title>Ürün bulunamadı | E-Commerce</title>
+                        </Helmet>
+                        {status}
+                    </div>
             }
         </>
     )

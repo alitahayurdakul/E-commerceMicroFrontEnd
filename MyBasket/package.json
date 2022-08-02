@@ -30,6 +30,7 @@
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^5.2.0",
     "react-stars": "^2.2.5",
     "url-loader": "^4.1.1"
