@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './SearchProduct.scss';
 
-function SearchProduct({addOrderList}) {
+function SearchProduct({ addOrderList }) {
     const [filterProducts, setFilterProducts] = useState([]);
     const [status, setStatus] = useState("");
     const { id } = useParams();
@@ -38,7 +38,9 @@ function SearchProduct({addOrderList}) {
                 !status ? (
                     <div className='search-products'>
                         {filterProducts.map(fProduct => (
-                            <Card product={fProduct} addOrderList={addOrderList}/>
+                            <React.Fragment key={fProduct.id}>
+                                <Card product={fProduct} addOrderList={addOrderList} />
+                            </React.Fragment>
                         ))}
                     </div>) : <div className='search-not-products'>
                     {status}

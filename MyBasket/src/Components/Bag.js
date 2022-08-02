@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Bag.scss';
-// import OrderList from './OrderList/OrderList';
 import OrderPrice from './OrderPrice/OrderPrice';
 
 class Bag extends Component {
@@ -28,9 +27,6 @@ class Bag extends Component {
     if (productCount - 1 === 0) {
       await this.props.removeOrder(productId);
       window.location.reload();
-      // this.setState({
-      //   orderList: this.state.orderList.filter(item => item.order.id !== productId)
-      // })
     }
 
     else {
@@ -39,7 +35,7 @@ class Bag extends Component {
         orderList: this.state.orderList
       });
     }
-    
+
   }
 
   onClickDeleteOrder = async (productId) => {
@@ -72,25 +68,25 @@ class Bag extends Component {
               <h2>Order Summary</h2>
               {
                 this.state.orderList.map(item => (
-                  <div className='order-list-card'>
-                    <div>
-                      <img src={item.order.image} />
-                    </div>
-                    <div className='order-list-card-middle'>
-                      <p>{item.order.title}</p>
-                      <p>${item.order.price}</p>
-                    </div>
-                    <div className='order-list-card-end'>
-                      <div className='order-control'>
-                        <button onClick={this.onClickDecrease.bind(this, item.order.id, item.count)}>-</button>
-                        <span> {item.count} </span>
-                        <button onClick={this.onClickIncrease.bind(this, item.order.id)}>+</button>
+                    <div className='order-list-card'>
+                      <div>
+                        <img src={item.order.image} />
                       </div>
-                      <div className='delete-item'>
-                        <button onClick={this.onClickDeleteOrder.bind(this, item.order.id)}>Sil</button>
+                      <div className='order-list-card-middle'>
+                        <p>{item.order.title}</p>
+                        <p>${item.order.price}</p>
+                      </div>
+                      <div className='order-list-card-end'>
+                        <div className='order-control'>
+                          <button onClick={this.onClickDecrease.bind(this, item.order.id, item.count)}>-</button>
+                          <span> {item.count} </span>
+                          <button onClick={this.onClickIncrease.bind(this, item.order.id)}>+</button>
+                        </div>
+                        <div className='delete-item'>
+                          <button onClick={this.onClickDeleteOrder.bind(this, item.order.id)}>Sil</button>
+                        </div>
                       </div>
                     </div>
-                  </div>
                 ))
               }
             </div>
@@ -100,9 +96,6 @@ class Bag extends Component {
             :
             <div>Card is empty</div>
         }
-
-        {/* <OrderList orderList={orderList} removeOrder={removeOrder} increaseOrderCount={increaseOrderCount} decreaseOrderCount={decreaseOrderCount}/>
-          <OrderPrice orderList={orderList}/> */}
       </div>
     )
   }

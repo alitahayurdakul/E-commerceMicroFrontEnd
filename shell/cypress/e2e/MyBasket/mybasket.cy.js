@@ -54,6 +54,5 @@ describe("my basket page is render", () => {
         cy.get(".bag-part div")
             .contains("Card is")
             .should("have.text","Card is empty")
-    })
-
+    });
 })
