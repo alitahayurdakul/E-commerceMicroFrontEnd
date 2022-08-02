@@ -43,7 +43,6 @@ function SearchProduct({ addOrderList }) {
                         </Helmet>
                         {filterProducts.map(fProduct => (
                             <React.Fragment key={fProduct.id}>
-
                                 <Card product={fProduct} addOrderList={addOrderList} />
                             </React.Fragment>
                         ))}
