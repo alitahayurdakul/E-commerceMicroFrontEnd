@@ -21,7 +21,7 @@ const App = (props) => {
             <Navbar />
             <Suspense fallback={<h1>Sayfa Yükleniyor...</h1>} >
                 <Switch>
-                    <Route path="/products/:id">
+                    <Route path="/products">
                         <SearchProductsLazy addOrderList={props.addOrderList} />
                     </Route>
 

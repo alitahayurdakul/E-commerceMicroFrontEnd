@@ -27,12 +27,12 @@ function Navbar(props) {
 
     const onClickSearch = (e) => {
         e.preventDefault();
-        history.push(`/products/q=${searchValue.toLowerCase().replace(" ", "-")}`)
+        history.push(`/products?q=${searchValue.toLowerCase().replace(" ", "-")}`)
     }
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
-            history.push(`/products/q=${searchValue.toLowerCase().replace(" ", "-")}`)
+            history.push(`/products?q=${searchValue.toLowerCase().replace(" ", "-")}`)
         }
     }
 

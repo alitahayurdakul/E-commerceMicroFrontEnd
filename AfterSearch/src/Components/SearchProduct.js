@@ -11,11 +11,13 @@ function SearchProduct({ addOrderList }) {
     const { id } = useParams();
 
     useEffect(() => {
+        console.log(window.location.search.slice(3).replace("-", " "))
         const getProducts = async () => {
             await axios.get("https://fakestoreapi.com/products")
 
                 .then(response => {
-                    const productContent = id.slice(2).replace("-", " ");
+                    // const productContent = id.slice(2).replace("-", " ");
+                    const productContent = window.location.search.slice(3).replace("-", " ")
                     const products = response.data.filter(product => product.title.toLowerCase().includes(productContent));
                     if (products.length !== 0) {
                         setFilterProducts(products);
@@ -39,7 +41,7 @@ function SearchProduct({ addOrderList }) {
                 !status ? (
                     <div className='search-products'>
                         <Helmet>
-                            <title>{id.slice(2)} Ürünleri | E-Commerce</title>
+                            <title>{window.location.search.slice(3)} Ürünleri | E-Commerce</title>
                         </Helmet>
                         {filterProducts.map(fProduct => (
                             <React.Fragment key={fProduct.id}>

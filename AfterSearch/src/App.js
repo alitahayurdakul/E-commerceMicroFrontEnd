@@ -7,7 +7,7 @@ export default ({ history, addOrderList }) => {
     return (
         <Router history={history} >
             <Switch>
-                <Route exact path="/products/:id" component={SearchProduct} >
+                <Route exact path="/products" >
                     <SearchProduct addOrderList={addOrderList}/>
                 </Route>
             </Switch>
