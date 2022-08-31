@@ -1,4 +1,4 @@
-# Micro Frontend Trying Project - E-commerce
+# Micro Frontend Test Project - E-commerce
 
 ### HomePage
 ![HomePage](./Images/HomePage.PNG "HomePage")
