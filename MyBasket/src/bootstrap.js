@@ -16,9 +16,10 @@ const mount = (el, { orderList, increaseOrderCount, decreaseOrderCount, removeOr
     root.render(<App history={history} orderList={orderList} removeOrder={removeOrder} increaseOrderCount={increaseOrderCount} decreaseOrderCount={decreaseOrderCount} />);
 
     return {
-        onParentNavigate({ pathname: nextPathname}) {
-            const { pathname } = history.location;
-
+        onParentNavigate({ pathname: nextPathname}) {//SubApp'in pathname'ini nextPathname'e atadık.
+            const { pathname } = history.location; // Shell App'in current pathname'i.
+            // ShellApp listen yaptığında ki pathname'i, SubApp'in pathname'i ile aynı değilse, shellApp'in pathname'ini SubApp'in pathname'ine güncelle. 
+            // yani browser history'nin url'sini memory history'nin içinde bulunduğu url'e göre güncelle ve contenti güncellensin.
             if(pathname !== nextPathname) {
                 history.push(nextPathname)
             }

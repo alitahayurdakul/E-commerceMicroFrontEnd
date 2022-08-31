@@ -11,7 +11,6 @@ function SearchProduct({ addOrderList }) {
     const { id } = useParams();
 
     useEffect(() => {
-        console.log(window.location.search.slice(3).replace("-", " "))
         const getProducts = async () => {
             await axios.get("https://fakestoreapi.com/products")
 
